@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Estaciones";
+}
+
+<title>Sistema Interconectado Central</title>
+<h2>Controlar Estaciones(Red de transmision)</h2>
+
+<form method="post">
+    <table>
+        <tr>
+            <td><b>*ASIGNAR VOLUMEN DE ENERGIA ELECTRICA</b></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Red de transmision: ")</td>
+            <td><input type="text" placeholder="RedTransmision" /></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Volumen energia electrica (MWh): ")</td>
+            <td><input type="text" placeholder="Volumen energia" /></td>
+            <td><input type="button" name="Agregar" value="Agregar" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" name="Guardar" value="Guardar" /></td>
+        </tr>
+        <tr>
+            <td><a href="../Home/EnergiaElectrica">ASIGNAR LIMITES DE OPERACION DE ENERGIA ELECTRICA</a></td>
+        </tr>
+        <tr>
+            <td><a href="../Home/RedDeTransmision">SERVICIO RED DE TRANSMISION</a></td>
+        </tr>
+        <tr>
+            <td><a href="../Home/LineaDeTransmision">LINEA DE TRANSMISION</a></td>
+        </tr>
+    </table>
+</form>

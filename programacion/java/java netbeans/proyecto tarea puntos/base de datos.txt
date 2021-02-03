@@ -1,0 +1,17 @@
+
+CREATE table "NEUMATICO" (
+    "CODIGO"     NUMBER,
+    "PRECIO"     NUMBER,
+    "TIPO"       VARCHAR2(50),
+    "STOCK"      NUMBER,
+    constraint  "NEUMATICO_PK" primary key ("CODIGO")
+)
+/
+
+
+
+INSERT INTO Neumatico VALUES(
+5,7,'neumatico',7);
+
+describe Neumatico
+

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {background: #509743;}
+
+.contenedorPrincipal{
+	margin: 0 auto;
+	width: 90%;
+	height:auto;
+	margin-bottom:50px;
+	background-color: #FFF;
+}

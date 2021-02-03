@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Eliminar_finalizar";
+}
+@model MvcDatos1.Models.Home.Usuario
+<table align="center">
+    <p><br/> <br /> </p>
+   <tr> <td> <h2>desea eliminar usuario?</h2> </td></tr>
+</table>
+
+<form action="../Home/Actualizar_usuario2" method="post">
+
+    <table border="1" align="center">
+        <p><br />  </p>
+        <tr>
+            <td>@Html.Label("Usuario")</td>
+            <td>@Html.Label("Perfil")</td>
+            <td>@Html.Label("Nombre")</td>
+            <td>@Html.Label("Apellido")</td>
+        </tr>
+
+        <tr>
+
+            <td><input type="text" value="@Model.usuario" disabled="disabled"></td>
+            <td><input type="text" name="perfil" value="@Model.perfil" readonly> </td>
+            <td><input type="text" name="nombre" value="@Model.nombre" readonly></td>
+            <td><input type="text" name="apellido" value="@Model.apellido" readonly></td>
+            <td><input type="hidden" name="usuario" value="@Model.usuario" readonly></td>
+            <td> <input type="submit" value="eliminar"></td>
+        </tr>
+
+    </table>
+</form>
+<table align="center">
+    <tr><td><a href="../Home/Home"><h2>Volver</h2></a></td></tr>
+</table>

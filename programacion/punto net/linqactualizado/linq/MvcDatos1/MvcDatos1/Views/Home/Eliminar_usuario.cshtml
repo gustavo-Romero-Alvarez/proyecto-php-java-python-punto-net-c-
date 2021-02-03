@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Eliminar_usuario";
+}
+@model List<MvcDatos1.Models.Home.Usuario>
+
+<h2>Eliminar Usuario</h2>
+<p align="center" ><h2>Seleccione nombre de usuario para eliminar </h2></p>
+<table border="1">
+    <tr>
+        <td>@Html.Label("Usuario")</td>
+        <td>@Html.Label("Perfil")</td>
+        <td>@Html.Label("Nombre")</td>
+        <td>@Html.Label("Apellido")</td>
+    </tr>
+    @foreach (var usuario in Model)
+    {
+        <tr>
+            <td><a href="../Home/Eliminar_finalizar?usuario=@usuario.usuario">@usuario.usuario</a></td>
+            <td>@usuario.perfil </td>
+            <td>@usuario.nombre</td>
+            <td>@usuario.apellido</td>
+        </tr>
+
+    }
+    <tr><td><a href="../Home/Home"> Volver</a></td></tr>
+</table>

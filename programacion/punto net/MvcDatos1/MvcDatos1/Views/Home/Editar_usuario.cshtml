@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Editar_usuario";
+}
+
+<h2>Editar_usuarioss</h2>
+
+@model MvcDatos1.Models.Home.Usuario
+
+<form action="../Home/resultado" method="post">
+    <table>
+        <tr><td> <input type="text" name="usuario" value="@Model.usuario" > usuario " </td></tr>
+        <tr><td> <input type="text" name="contrasenia" value="@Model.contrasenia"> contrasenia </td></tr>
+        <tr><td> <input type="text" name="perfil" value="@Model.perfil"> perfil  </td></tr>
+        <tr><td> <input type="text" name="nombre" value="@Model.nombre"> nombre  </td></tr>
+        <tr><td> <input type="text" name="apellido" value="@Model.apellido"> apellido  </td></tr>
+          
+        <tr><td> <input type="submit" value="Ingresar" /> </td></tr>
+    </table>
+    <table align="center">
+        
+        <tr><td><a href="../Home/index" /> volver</td></tr>
+
+
+    </table>
+
+
+
+
+</form>
+

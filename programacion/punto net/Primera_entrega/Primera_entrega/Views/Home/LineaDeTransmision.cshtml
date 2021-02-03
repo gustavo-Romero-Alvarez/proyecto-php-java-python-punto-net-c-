@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "LineaDeTransmision";
+}
+
+<title>Sistema Interconectado Central</title>
+<h2>Controlar Estaciones(Red de transmision)</h2>
+<form method="post">
+    <table>
+        <tr>
+            <td><b>*LINEA DE TRANSMISION</b></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Red de transmision: ")</td>
+            <td><input type="text" placeholder="RedTransmisionLinea" /></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Linea de transmision: ")</td>
+            <td><input type="text" placeholder="LineaDeTransmision" /></td>
+            <td><input type="button" name="Asignar" value="Asignar" /></td>
+            <td><input type="button" name="Eliminar" value="Eliminar" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" name="Guardar" value="Guardar" /></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,176 @@
+create table Ciudad(
+	Ciudad_Id  int,
+	Ciudad_Detalle varchar(50) not null,
+	Ciudad_Obs varchar (200) not null default 'sin observaciones',
+	primary key (Ciudad_Id),
+	);
+create table Actividad(
+	Actividad_Id int,
+	Actividad_Detall varchar(50) not null,
+	Actividad_Obs varchar (200) not null default 'sin observaciones',
+	primary key (Actividad_Id),
+	);
+
+create table Persona(
+	Rut_Persona varchar(8),
+	Digito_Verificador char not null,
+	Edad_Persona int not null,
+	Nombre_Persona varchar (30) not null,
+	Apellido_Pater_Persona varchar(15) not null,
+	Apellido_Mater_Persona varchar(15) not null,
+	primary key(Rut_Persona),
+	Ciudad_Id int,
+	Actividad_Id int,
+	constraint fk_CiudadId foreign key (Ciudad_Id)references Ciudad(Ciudad_Id),
+	constraint fk_ActividadId foreign key (Actividad_Id)references Actividad(Actividad_Id), 
+    );
+
+Alter Table Persona DROP COLUMN Edad_Persona;
+Alter Table Persona ADD Fecha_nacimineto date not null
+
+exec sp_rename 'Ciudad.Ciudad_Detalle', 'Ciudad_Nombre';
+Alter Table Actividad ADD Actividad_Nombre varchar(20) not null;
+
+insert into Ciudad(Ciudad_Id, Ciudad_Nombre, Ciudad_Obs)
+values ('1', 'Buenos Aires, Argentina', 'Argentina');
+
+insert into Ciudad(Ciudad_Id, Ciudad_Nombre, Ciudad_Obs)
+values ('2', 'Santigo, Chile', 'Chile');
+
+insert into Ciudad(Ciudad_Id, Ciudad_Nombre, Ciudad_Obs)
+values ('3', 'Lima, Peru', 'Peru');
+
+insert into Ciudad(Ciudad_Id, Ciudad_Nombre, Ciudad_Obs)
+values ('4', 'Quito, Ecuador', 'Ecuador');
+
+insert into Ciudad(Ciudad_Id, Ciudad_Nombre, Ciudad_Obs)
+values ('5', 'Montevideo, Uruguay', 'Uruguay');
+
+insert into Ciudad
+values('6', 'Madrid, España', 'España');
+
+insert into Ciudad
+values('7', 'Berlin, Alemania', 'Alemania');
+
+insert into Ciudad
+values('8', 'Caracas, Venezuela', 'Venezuela');
+
+
+
+select * from  Ciudad
+
+insert into Actividad
+values('1', 'Actividad Fisica', 'Buena Condicion', 'Alpinismo');
+
+insert into Actividad
+values('2', 'Actividad ', 'Concentracion', 'Ajedrez');
+
+insert into Actividad
+values('3', 'Locura', 'No Tener Cerebro', 'Parkour');
+
+insert into Actividad
+values('4', 'Actividad Fisica', 'Buena Condicion', 'Futbol');
+
+insert into Actividad
+values('5', 'Actividad Fisica', 'Buena Condicion', 'Atletismo');
+
+insert into Actividad
+values('6', 'Docencia', 'Experiencia', 'Profesor');
+
+insert into Actividad
+values('7', 'Intelecto', 'Buen Entendimiento', 'Filosofia');
+
+insert into Actividad
+values('8', 'Habilidad Motriz', 'Buena Punteria', 'Rayuela');
+
+
+select * from Actividad
+
+insert into Persona
+values('52487956', '5', 'Juan', 'Perez', 'Rosas', 1, 1, '19/05/1990');
+
+select * from Persona 
+select getdate()
+
+insert into Persona
+values('52648749', 'k', 'Luis', 'Caceres', 'Zacarias', 2, 2, '16/01/1970');
+
+insert into Persona
+values('82649721', '2', 'Emilio', 'Alvarez', 'Canales', 3, 3, '29/09/2000');
+
+insert into Persona
+values('12324895', '8', 'Karen', 'Rubilar', 'Espejo', 4, 4, '01/10/1988');
+
+insert into Persona
+values('56984214', 'k', 'Alexander', 'Cares', 'Ormeño', 5, 5, '09/10/1996');
+
+insert into Persona
+values('65218495', '0', 'Kimberli', 'Yañez', 'Schneider', 6, 6, '09/01/1970');
+
+insert into Persona
+values('52641039', 'k', 'Pedro', 'Carter', 'Oviedo', 7, 7, '02/03/1985');
+
+insert into Persona
+values('85946785', '5', 'Kevin', 'Cisarro', 'Macaya', 8, 8, '01/12/1992');
+
+select * from Persona
+
+Alter Table Ciudad ADD Clima varchar(50) default 'sin observaciones'
+Alter Table Ciudad ADD Idioma varchar(50) null
+Alter Table Ciudad ADD Moneda varchar(50) default 'sin observaciones'
+
+update Ciudad
+set Clima='Calido', Idioma='Español', Moneda='Peso'
+where Ciudad_Id = '1';
+
+update Ciudad
+set Clima='Weon', Idioma='Español', Moneda='Peso'
+where Ciudad_Id = '2';
+
+update Ciudad
+set Clima='Calido', Idioma='Español ', Moneda='Sol'
+where Ciudad_Id = '3';
+
+update Ciudad
+set Clima='Calido', Idioma='Español', Moneda='Peso Ecuatoriano'
+where Ciudad_Id = '4';
+
+update Ciudad
+set Clima='Raro', Idioma='Español', Moneda='Llanto'
+where Ciudad_Id = '5';
+
+update Ciudad
+set Clima='Tenso', Idioma='Español Coño', Moneda='Euro'
+where Ciudad_Id = '6';
+
+update Ciudad
+set Clima='Violento', Idioma='Aleman', Moneda='Euro'
+where Ciudad_Id = '7';
+
+update Ciudad
+set Clima='Socialiste', Idioma='Español', Moneda='Bolivar'
+where Ciudad_Id = '8';
+
+
+select * from Ciudad
+
+--Mostrar Persona y actividad que realiza
+select p.*, a.Actividad_Nombre
+from Persona p, Actividad a
+where p.Actividad_Id = a.Actividad_Id
+
+--Mostrar persona que viva o trabaje en argentina o venezuela
+select *
+from Ciudad
+where Ciudad_Id in (1, 8)
+
+select *
+from Ciudad
+where Ciudad_Obs like '%Venezuela%'
+or Ciudad_Obs like '%Argentina%'
+
+select * c.Ciudad_Detalle
+from Ciudad c, Persona p
+where c.Ciudad_Id = p.Ciudad_Id
+ Ciudad_Obs like '%Venezuela%'
+or Ciudad_Obs like '%Argentina%'

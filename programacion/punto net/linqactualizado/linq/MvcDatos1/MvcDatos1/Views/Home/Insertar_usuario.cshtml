@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Insertar_usuario";
+}
+
+<h2>Nuevo usuario</h2>
+
+
+<form action="../Home/Insertar_usuario" method="post">
+
+    <table border="1">
+        <tr>
+            <td>@Html.Label("Usuario")</td>
+            <td><input type="text" name="usuario" value="">
+
+        <tr>
+
+        <tr>
+            <td>@Html.Label("Contrasenia")</td>
+            <td><input type="password" name="contrasenia" value="">
+
+        <tr>
+        <tr>
+            <td>@Html.Label("Perfil")</td>
+            <td><input type="text" name="perfil" value=""> </td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("Nombre")</td>
+            <td><input type="text" name="nombre" value=""></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Apellido")</td>
+            <td><input type="text" name="apellido" value=""></td>
+        </tr>
+
+        <tr>
+            <td> <input type="submit" value="Guardar"></td>
+        </tr>    
+    </table>
+</form>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "EstadoProductor";
+}
+<title>Sistema Interconectado Central</title>
+<h2>Gestion de Productores</h2>
+
+<form method="post">
+    <table>
+        <tr>
+            <td><b>*ESTABLECER ESTADO PRODUCTOR</b></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Nombre productor: ")</td>
+            <td><input type="text" placeholder="ProductorEstado" /></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Estado productor: ")</td>
+            <td>
+                <select>
+                    <option>Disponible</option>
+                    <option>No disponible</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" name="Guardar" value="Guardar" /></td>
+        </tr>
+    </table>
+</form>

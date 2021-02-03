@@ -1,0 +1,19 @@
+#ejercicio numero 17 que muestre los numeros del 1 al 100 en una tabla de 10x10
+a=(range (1,11))
+print a
+b=(range (11,21))
+print b
+c=(range (21,31))
+print c
+d=(range (31,41))
+print d
+e=(range (41,51))
+print e
+f=(range (51,61))
+print f
+g=(range (61,71))
+print g
+h=(range (71,81))
+print h
+i=(range (81,91))
+print i

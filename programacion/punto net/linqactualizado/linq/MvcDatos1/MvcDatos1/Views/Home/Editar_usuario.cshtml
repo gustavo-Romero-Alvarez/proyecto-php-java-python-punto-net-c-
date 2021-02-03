@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Editar_usuario";
+}
+@model MvcDatos1.Models.Home.Usuario
+
+<h2>Modifique los datos del usuario seleccionado</h2>
+
+<form action="../Home/Actualizar_usuario" method="post">
+
+  
+    <table border="1">
+        <tr>
+            <td>@Html.Label("Usuario")</td>
+            <td>@Html.Label("Perfil")</td>
+            <td>@Html.Label("Nombre")</td>
+            <td>@Html.Label("Apellido")</td>
+        </tr>
+
+        <tr>
+
+            <td><input type="text"  value="@Model.usuario" disabled="disabled"></td>
+            <td><input type="text" name="perfil" value="@Model.perfil" > </td>
+            <td><input type="text" name="nombre" value="@Model.nombre" ></td>
+            <td><input type="text" name="apellido" value="@Model.apellido" ></td>
+            <td><input type="hidden"  name ="usuario" value="@Model.usuario"></td>
+            <td> <input type="submit" value="actualizar"></td>
+        </tr>
+
+    </table>
+</form>
+<tr><td><a href="../Home/Home"> Volver</a></td></tr>

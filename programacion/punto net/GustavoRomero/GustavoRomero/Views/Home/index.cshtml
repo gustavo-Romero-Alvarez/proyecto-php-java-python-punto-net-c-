@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "index";
+}
+
+
+    <form action="../Home/Conversion" method="post">
+     
+      
+        <table align="center">
+
+
+
+            <tr>
+
+                <td>Cantidad a convertir</td>
+                <td><input type="text" name="temperatura"></td>
+
+            </tr>
+          
+
+        </table>
+        <table align="center">
+            <tr><td>de :</td></tr>
+            <tr>
+                <td>
+                    <select name="actividad1">
+                        <option value="1"> Grados celcius</option>
+                        <option value="2"> Grados fahreiheit </option>
+                        <option value="3"> grados rankine</option>
+                        <option value="4"> grados reamur</option>
+                        <option value="5"> grados kelvin</option>
+
+                    </select>
+                </td>
+                <td>
+                    <select name="actividad2">
+                        <option value="1"> Grados celcius</option>
+                        <option value="2"> Grados fahreiheit </option>
+                        <option value="3"> grados rankine</option>
+                        <option value="4"> grados reamur</option>
+                        <option value="5"> grados kelvin</option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr><td><input type="submit" value="convertir" /></td></tr>
+
+        </table>
+ 
+    </form>

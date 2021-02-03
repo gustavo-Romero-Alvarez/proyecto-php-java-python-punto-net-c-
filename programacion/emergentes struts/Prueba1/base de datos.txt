@@ -1,0 +1,9 @@
+CREATE TABLE usuario(
+usuario VARCHAR2(15) PRIMARY KEY,
+contrasenia VARCHAR2(15) NOT NULL,
+nombre VARCHAR2(25) NOT NULL,
+apellidos VARCHAR2(25) NOT NULL,
+tipo VARCHAR2(20) NOT NULL)
+
+insert into usuario values('alexis', 'contra,'gustavo', 'romero', 'Administrador');
+insert into usuario values('gustavo', 'contra', 'gus', 'romer', 'Usuario')

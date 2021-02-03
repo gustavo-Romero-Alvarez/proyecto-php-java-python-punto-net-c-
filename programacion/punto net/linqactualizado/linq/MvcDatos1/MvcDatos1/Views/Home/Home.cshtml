@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@model MvcDatos1.Models.Home.Usuario
+
+<h2>Bienvenido</h2>
+
+<table  border = "1" align="right" >
+    <tr><td>@Html.Label("Usuario"): </td> <td>@Model.usuario </td> </tr>
+    <tr><td>@Html.Label("perfil"): </td> <td>@Model.perfil </td> </tr>
+    <tr><td>@Html.Label("nombre"): </td> <td>@Model.nombre </td> </tr>
+    <tr><td>@Html.Label("Apellido"): </td> <td>@Model.apellido </td> </tr>
+</table>
+
+<h3>Opciones</h3>
+<table>
+    <tr><td><a href="../Home/Usuarios"/>Usuarios del Sistema</td></tr>
+    <tr><td><a href="../Home/Insertar_usuario" />Nuevo usuario</td></tr>
+    <tr><td><a href="../Home/Eliminar_usuario" />Eliminar usuario</td></tr>
+</table>

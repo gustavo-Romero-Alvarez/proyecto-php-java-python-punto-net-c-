@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Productores";
+}
+
+<title>Sistema Interconectado Central</title>
+<h2>Gestion de Productores</h2>
+
+<form method="post">
+    <table>
+        <tr>
+            <td><b>*ASIGNACION - ELIMINACION DE PRODUCTORES</b></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Nombre Estacion Primaria: ")</td>
+            <td><input type="text" placeholder="Estacion" /></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Productor: ")</td>
+            <td><input type="text" placeholder="Productor" /></td>
+            <td><input type="button" name="Agregar" value="Agregar" /></td>
+            <td><input type="button" name="Eliminar" value="Eliminar" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" name="Guardar" value="Guardar" /></td>
+        </tr>
+        <tr>
+            <td><a href="../Home/VolumenDeProduccion">ESTABLECER VOLUMEN DE PRODUCCION</a></td>
+        </tr>
+        <tr>
+            <td><a href="../Home/EstadoProductor">ESTABLECER ESTADO PRODUCTOR</a></td>
+        </tr>
+    </table>
+</form>
+
+

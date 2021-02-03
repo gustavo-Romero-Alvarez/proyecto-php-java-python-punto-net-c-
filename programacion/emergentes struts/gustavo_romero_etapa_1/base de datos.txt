@@ -1,0 +1,106 @@
+
+select *from sistema_planetario
+select *from estrella
+select * from tipo
+select *from planeta
+
+
+CREATE TABLE usuario(
+usuario VARCHAR2(15) PRIMARY KEY,
+contrasenia VARCHAR2(15) NOT NULL,
+nombre VARCHAR2(25) NOT NULL,
+apellidos VARCHAR2(25) NOT NULL,
+tipo VARCHAR2(20) NOT NULL)
+
+insert into usuario values('alexis', 'contra,'gustavo', 'romero', 'Administrador');
+insert into usuario values('gustavo', 'contra', 'gus', 'romer', 'Usuario')
+
+
+
+select *from sistema_planetario 
+insert into usuario values('alexis', 'contra,'gustavo', 'romero', 'Administrador');
+insert into usuario values('gustavo', 'contra', 'gus', 'romer', 'Usuario')
+
+
+CREATE TABLE sistema_planetario 
+(
+id_sistema_planetario VARCHAR2(25) PRIMARY KEY,
+nombre VARCHAR2(25) NOT NULL
+);
+
+
+CREATE TABLE tipo_cuerpos_menores 
+(
+id_tipo_cuerpo_menor VARCHAR2(25) PRIMARY KEY,
+nombre VARCHAR2(25) NOT NULL
+);
+
+CREATE TABLE tipo 
+(
+id_tipo VARCHAR2(50) PRIMARY KEY,
+nombre VARCHAR2(25) NOT NULL
+);
+
+CREATE TABLE estrella (
+   id_estrella VARCHAR2(50) PRIMARY KEY,
+   nombre VARCHAR2(25) NOT NULL,
+   id_sistema_planetario VARCHAR2(25) , 
+   FOREIGN KEY (id_sistema_planetario) REFERENCES sistema_planetario(id_sistema_planetario)
+);
+
+
+CREATE TABLE cuerpos_celestes (
+   id_cuerpos_menores VARCHAR2(25) PRIMARY KEY,
+   nombre VARCHAR2(25) NOT NULL,
+   masa int NOT NULL, 
+   tamano int NOT NULL, 
+   id_estrella VARCHAR2(25) ,
+   tipo_cuerpo_menor VARCHAR2(25) ,
+   FOREIGN KEY (id_estrella) REFERENCES estrella(id_estrella),
+   FOREIGN KEY (tipo_cuerpo_menor) REFERENCES tipo_cuerpos_menores(id_tipo_cuerpo_menor)
+);
+
+
+CREATE TABLE planeta (
+   id_planeta VARCHAR2(50) PRIMARY KEY,
+   nombre VARCHAR2(50),
+   simbologia VARCHAR2(50),
+   diametro_ecuatorial int,
+   masa int NOT NULL,
+   radio_orbital int,
+   periodo_orbital int,
+   periodo_rotacion int,
+   composicion_atmosfera VARCHAR2(50),
+   imagen VARCHAR2(50),
+   id_estrella VARCHAR2(50),
+   id_tipo VARCHAR2(50),
+
+   FOREIGN KEY (id_estrella) REFERENCES estrella(id_estrella),
+   FOREIGN KEY (id_tipo) REFERENCES tipo(id_tipo)
+);
+
+
+
+CREATE TABLE satelites (
+   id_satelite VARCHAR2(25) PRIMARY KEY,
+   nombre VARCHAR2(20),
+   diametro int,
+   periodo_orbital_dia int,
+   periodo_orbital_horas int,
+   periodo_orbital_minutos int,
+   imagen VARCHAR2(20) ,
+   id_planeta VARCHAR2(25),
+
+   FOREIGN KEY (id_planeta) REFERENCES planeta(id_planeta)
+  
+);
+
+
+
+
+
+
+
+
+
+

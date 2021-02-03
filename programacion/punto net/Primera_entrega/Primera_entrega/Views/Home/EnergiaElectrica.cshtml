@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "EnergiaElectrica";
+}
+<title>Sistema Interconectado Central</title>
+<h2>Controlar Estaciones(Red de transmision)</h2>
+
+<form method="post">
+    <table>
+        <tr>
+            <td><b>*ASIGNAR LIMITES DE OPERACION DE ENERGIA ELECTRICA</b></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Red de transmicion: ")</td>
+            <td><input type="text" placeholder="RedTransmisionEnergia" /></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Limites de operacion (MWh): ")</td>
+            <td>
+                <select>
+                    <option>Minima</option>
+                    <option>Maxima</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" name="Guardar" value="Guardar" /></td>
+        </tr>
+
+    </table>
+</form>
